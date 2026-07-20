@@ -418,7 +418,7 @@ function SkillDetailPanel({ skill }) {
 export default function StackShowcase({ categories }) {
   const defaultSkill = useMemo(
     () =>
-      categories.flatMap((c) => c.skills).find((s) => s.name === "React") ||
+      categories.flatMap((c) => c.skills).find((s) => s.name === "Node.js") ||
       categories[0]?.skills[0],
     [categories]
   );
@@ -469,10 +469,11 @@ export default function StackShowcase({ categories }) {
           transition={{ delay: 0.08 }}
           className="mt-2 text-xs text-slate-300 sm:mt-3 sm:text-sm md:text-base"
         >
-          Práctica personal y trabajo colaborativo en{" "}
+          Perfil más{" "}
+          <span className="font-semibold text-emerald-300">backend</span> que front: APIs, datos y
+          servicios. Colaboro en{" "}
           <span className="font-semibold text-white/90">Grupo1-AISentinel</span> y{" "}
-          <span className="font-semibold text-white/90">Sistema-Bancario-IN6BV</span>. React lidera
-          (~60%); el resto es aprendizaje real, no seniority.
+          <span className="font-semibold text-white/90">Sistema-Bancario-IN6BV</span>.
         </motion.p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
           <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold text-slate-300">
@@ -481,8 +482,9 @@ export default function StackShowcase({ categories }) {
           <span className="rounded-full border border-brand-cyan/25 bg-brand-cyan/10 px-3 py-1 text-[11px] font-bold text-brand-cyan">
             Promedio ~{totals.avg}%
           </span>
-          <span className="rounded-full border border-brand-accent/25 bg-brand-accent/10 px-3 py-1 text-[11px] font-bold text-brand-accent">
-            React {categories.flatMap((c) => c.skills).find((s) => s.name === "React")?.percentage ?? 60}%
+          <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-bold text-emerald-300">
+            Node.js{" "}
+            {categories.flatMap((c) => c.skills).find((s) => s.name === "Node.js")?.percentage ?? 65}%
           </span>
           <a
             href="https://github.com/orgs/Grupo1-AISentinel"
