@@ -444,10 +444,7 @@ export default function StackShowcase({ categories }) {
   if (!selectedSkill) return null;
 
   return (
-    <div className="blue-depth-bg relative overflow-hidden rounded-2xl border border-brand-cyan/18 px-3 py-8 text-white shadow-[0_30px_100px_rgba(7,17,31,.6)] sm:rounded-[32px] sm:px-8 sm:py-12 lg:px-10">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgba(0,210,255,.18),transparent_34%),radial-gradient(circle_at_82%_20%,rgba(249,115,22,.14),transparent_26%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-60 [background-image:linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] [background-size:42px_42px]" />
-
+    <div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-[#0A1E3F] px-3 py-8 text-white shadow-[0_30px_100px_rgba(7,17,31,.6)] sm:rounded-[32px] sm:px-8 sm:py-12 lg:px-10">
       <div className="relative mx-auto mb-8 max-w-3xl text-center sm:mb-10">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
