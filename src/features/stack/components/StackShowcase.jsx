@@ -43,9 +43,10 @@ const iconMap = {
 };
 
 const categoryAccent = {
-  frontend: "#00D2FF",
   backend: "#22C55E",
   databases: "#F97316",
+  languages: "#FACC15",
+  frontend: "#00D2FF",
   tools: "#A78BFA",
 };
 

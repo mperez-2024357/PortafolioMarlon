@@ -21,7 +21,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Cómodo',
           description:
-            'Donde más me siento. Servidores, APIs y lógica de negocio en JavaScript. Labs, microservicios AISentinel (admin/auth) y backends bancario / restaurante.',
+            'Runtime de backend para JavaScript (el backend no es “JS”, es Node + APIs). Servidores, lógica de negocio y microservicios AISentinel (admin/auth) y banca / restaurante.',
           projects: [
             { name: 'COPEREX Interfer API', year: 2026 },
             { name: 'server-admin-aisentinel', year: 2026 },
@@ -160,8 +160,8 @@ const useStackStore = create((set) => ({
       ],
     },
     {
-      id: 'frontend',
-      name: 'Frontend',
+      id: 'languages',
+      name: 'Lenguajes',
       skills: [
         {
           name: 'JavaScript',
@@ -169,25 +169,49 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Cómodo',
           description:
-            'Base compartida front y back. En backend es mi lenguaje principal; en UI lo uso lo necesario para pantallas y consumo de APIs.',
+            'Lenguaje (no es “el backend” ni “el frontend” por sí solo). Lo uso en el navegador con React y en el servidor con Node.js/Express. ES6+, async y lógica del día a día.',
           projects: [
             { name: 'COPEREX Interfer API', year: 2026 },
             { name: 'server-admin-aisentinel', year: 2026 },
-            { name: 'Sistema Bancario API', year: 2026 },
+            { name: 'Portafolio Marlon', year: 2026 },
           ],
           subSkills: [
             { name: 'ES6+ / lógica', val: 62 },
-            { name: 'Async / Fetch', val: 60 },
-            { name: 'DOM / UI básica', val: 48 },
+            { name: 'Async / promesas', val: 60 },
+            { name: 'Uso con Node (backend)', val: 65 },
+            { name: 'Uso en el browser (front)', val: 48 },
           ],
         },
+        {
+          name: 'TypeScript',
+          percentage: 38,
+          experience: '1',
+          level: 'Fundamentos',
+          description:
+            'JavaScript con tipos. También es un lenguaje multiplataforma: sirve para APIs Node y para React. Lo aplico de forma gradual (Yeimi AI y contratos de datos).',
+          projects: [
+            { name: 'Yeimi AI', year: 2026 },
+          ],
+          subSkills: [
+            { name: 'Tipos básicos', val: 42 },
+            { name: 'Interfaces / contratos', val: 40 },
+            { name: 'En APIs / Node', val: 38 },
+            { name: 'Con React', val: 32 },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'frontend',
+      name: 'Frontend',
+      skills: [
         {
           name: 'React',
           percentage: 48,
           experience: '1',
           level: 'En progreso',
           description:
-            'Lo uso en portafolio y fronts de comunidad, pero me siento más cómodo armando APIs que puliendo UI. Componentes, hooks y estado a nivel funcional.',
+            'Librería de UI (frontend). Portafolio y fronts de comunidad; me siento más cómodo armando APIs que puliendo interfaces.',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
             { name: 'AISentinel Client', year: 2026 },
@@ -205,7 +229,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Base web para maquetar y conectar con el backend. Agenda Web, Sitio Web e IN5AV; hoy lo uso de apoyo a React.',
+            'Base del frontend: maquetado y estilos. Agenda Web, Sitio Web e IN5AV; hoy apoyo a React.',
           projects: [
             { name: 'Agenda Web', year: 2026 },
             { name: 'Sitio Web', year: 2026 },
@@ -223,7 +247,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Utilidades para UI rápida cuando toca front. Portafolio y client AISentinel; no es mi zona de mayor comodidad.',
+            'Utilidades CSS para UI. Portafolio y client AISentinel; no es mi zona de mayor comodidad.',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
             { name: 'AISentinel Client', year: 2026 },
@@ -240,7 +264,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Build, preview y deploy de apps (estáticas y front con API). Portafolio y AISentinel Client; lo domino más del lado tooling/deploy que del diseño visual.',
+            'Tooling de frontend: dev server, build y deploy estático. Portafolio y AISentinel Client.',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
             { name: 'AISentinel Client', year: 2026 },
@@ -258,7 +282,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Fundamentos',
           description:
-            'Móvil en labs y módulos IN6BV. Prefiero la capa de API; la UI nativa la voy reforzando.',
+            'UI móvil con React. Labs e IN6BV; prefiero la capa de API.',
           projects: [
             { name: 'React Native for Android', year: 2026 },
             { name: 'Sistema Bancario Móvil', year: 2026 },
@@ -268,22 +292,6 @@ const useStackStore = create((set) => ({
             { name: 'Componentes nativos', val: 38 },
             { name: 'Navegación básica', val: 32 },
             { name: 'Estilos RN', val: 34 },
-          ],
-        },
-        {
-          name: 'TypeScript',
-          percentage: 38,
-          experience: '1',
-          level: 'Fundamentos',
-          description:
-            'Tipado gradual (Yeimi AI y APIs más formales). Lo aplico más cuando el backend o el contrato de datos lo piden.',
-          projects: [
-            { name: 'Yeimi AI', year: 2026 },
-          ],
-          subSkills: [
-            { name: 'Tipos básicos', val: 42 },
-            { name: 'Interfaces / contratos', val: 40 },
-            { name: 'Integración con React', val: 32 },
           ],
         },
       ],
