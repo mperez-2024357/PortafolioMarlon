@@ -88,14 +88,25 @@ function MacScene({ open, springOpen, hinge, onToggle }) {
   );
 }
 
-export default function AnimatedBackground() {
-  const { bypassLoading } = usePreloader();
-  const [open, setOpen] = useState(false);
-  const spring = useSpring({ open: Number(open) });
+/**
+ * Fires once the GLB materials/geometry are in memory so the preloader
+ * can finish if the intro is still waiting on scene readiness.
+ */
+function SceneReadySignal() {
+  const { markSceneReady } = usePreloader();
+  // Touch the GLTF so this only mounts after the model resolved under Suspense.
+  useGLTF(macModel);
 
   useEffect(() => {
-    bypassLoading();
-  }, [bypassLoading]);
+    markSceneReady();
+  }, [markSceneReady]);
+
+  return null;
+}
+
+export default function AnimatedBackground() {
+  const [open, setOpen] = useState(false);
+  const spring = useSpring({ open: Number(open) });
 
   return (
     <div className="animated-bg">
@@ -106,12 +117,15 @@ export default function AnimatedBackground() {
         dpr={[1, 1.8]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
-        <MacScene
-          open={open}
-          springOpen={spring.open}
-          hinge={spring.open.to([0, 1], [1.575, -0.425])}
-          onToggle={() => setOpen((value) => !value)}
-        />
+        <Suspense fallback={null}>
+          <SceneReadySignal />
+          <MacScene
+            open={open}
+            springOpen={spring.open}
+            hinge={spring.open.to([0, 1], [1.575, -0.425])}
+            onToggle={() => setOpen((value) => !value)}
+          />
+        </Suspense>
       </Canvas>
     </div>
   );
