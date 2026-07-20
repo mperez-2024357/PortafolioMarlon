@@ -1,9 +1,13 @@
 import { create } from 'zustand'
 
 /**
- * Stack realista (~1 año de práctica).
+ * Stack realista (~1 año de práctica + trabajo en comunidades).
  * Porcentajes = comodidad relativa, no “años senior”.
- * Proyectos alineados con repos públicos de mperez-2024357.
+ *
+ * Comunidades / orgs:
+ * - Grupo1-AISentinel (client Vite/React, server Python, microservicios)
+ * - Sistema-Bancario-IN6BV (banca, restaurante, auth, móvil)
+ * + repos personales mperez-2024357
  */
 const useStackStore = create((set) => ({
   selectedSkill: null,
@@ -19,12 +23,12 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Cómodo',
           description:
-            'Mi tecnología principal. Componentes, hooks, estado (Zustand/Context), rutas y UIs interactivas. Lo uso a diario en el portafolio y labs.',
+            'Mi tecnología principal. Componentes, hooks, estado (Zustand/Context), rutas y UIs interactivas. Lo uso en el portafolio, labs y en comunidades (AISentinel client, frontends bancarios).',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
-            { name: 'ReactApp', year: 2026 },
-            { name: 'FrontConvertidor', year: 2026 },
-            { name: 'PMA Laboratorio 2', year: 2026 },
+            { name: 'AISentinel Client', year: 2026 },
+            { name: 'Sistema Bancario Frontend', year: 2026 },
+            { name: 'Sistema Restaurante Frontend', year: 2026 },
           ],
           subSkills: [
             { name: 'Componentes / Hooks', val: 62 },
@@ -38,11 +42,11 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Cómodo',
           description:
-            'ES6+, asíncronía, arrays y lógica del día a día en front y back. Base de casi todos mis repos en GitHub.',
+            'ES6+, asíncronía y lógica del día a día en front y back. Base de APIs IN6BV, microservicios AISentinel y repos personales.',
           projects: [
             { name: 'COPEREX Interfer API', year: 2026 },
-            { name: 'Gestor de opiniones', year: 2026 },
-            { name: 'server-admin-IN6BV', year: 2026 },
+            { name: 'server-admin-aisentinel', year: 2026 },
+            { name: 'Sistema Bancario API', year: 2026 },
           ],
           subSkills: [
             { name: 'ES6+', val: 60 },
@@ -56,9 +60,10 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Layouts responsivos, utilidades y UI limpia sin pelear tanto con CSS suelto. Lo uso fuerte en el portafolio.',
+            'Layouts responsivos y UI con utilidades. Portafolio y client AISentinel (Tailwind + Vite).',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
+            { name: 'AISentinel Client', year: 2026 },
           ],
           subSkills: [
             { name: 'Layout / responsive', val: 58 },
@@ -72,7 +77,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Cómodo',
           description:
-            'HTML semántico, Flex/Grid y estilos base. Empecé por aquí (Agenda Web, Sitio Web, IN5AV) y aún lo uso debajo de React.',
+            'HTML semántico, Flex/Grid y estilos base. Empecé por aquí (Agenda Web, Sitio Web, IN5AV) y sigue bajo React.',
           projects: [
             { name: 'Agenda Web', year: 2026 },
             { name: 'Sitio Web', year: 2026 },
@@ -86,34 +91,38 @@ const useStackStore = create((set) => ({
         },
         {
           name: 'Vite',
-          percentage: 50,
+          percentage: 55,
           experience: '1',
           level: 'En progreso',
           description:
-            'Bundler del día a día para React: dev server rápido, build y assets. Es el entorno del portafolio y varios labs.',
+            'Bundler del día a día: dev server, build de producción y despliegue de apps estáticas (preview, hosting, assets). Portafolio y AISentinel Client corren con Vite.',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
+            { name: 'AISentinel Client', year: 2026 },
+            { name: 'FrontConvertidor', year: 2026 },
           ],
           subSkills: [
-            { name: 'Dev server / HMR', val: 55 },
-            { name: 'Build de producción', val: 48 },
-            { name: 'Assets estáticos', val: 50 },
+            { name: 'Dev server / HMR', val: 58 },
+            { name: 'Build de producción', val: 55 },
+            { name: 'Deploy / hosting estático', val: 52 },
           ],
         },
         {
           name: 'React Native',
-          percentage: 35,
+          percentage: 38,
           experience: '1',
           level: 'Fundamentos',
           description:
-            'Primeros pasos en móvil con React. Laboratorio React Native for Android: pantallas, componentes y flujo básico.',
+            'Apps móviles con React: labs personales y módulos móvil del Sistema Bancario / Restaurante (IN6BV).',
           projects: [
             { name: 'React Native for Android', year: 2026 },
+            { name: 'Sistema Bancario Móvil', year: 2026 },
+            { name: 'Sistema Restaurante Móvil', year: 2026 },
           ],
           subSkills: [
-            { name: 'Componentes nativos', val: 38 },
-            { name: 'Navegación básica', val: 32 },
-            { name: 'Estilos RN', val: 35 },
+            { name: 'Componentes nativos', val: 40 },
+            { name: 'Navegación básica', val: 35 },
+            { name: 'Estilos RN', val: 36 },
           ],
         },
         {
@@ -122,7 +131,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Fundamentos',
           description:
-            'Tipado en proyectos con más estructura (p. ej. Yeimi AI). Aún lo refuerzo; no es mi default en todos los repos.',
+            'Tipado en proyectos con más estructura (p. ej. Yeimi AI). Lo refuerzo de forma gradual junto a React.',
           projects: [
             { name: 'Yeimi AI', year: 2026 },
           ],
@@ -144,11 +153,12 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Servidores y APIs en JavaScript. Lo uso con Express en APIs académicas y de laboratorio (COPEREX, admin, gestores).',
+            'Servidores y APIs en JavaScript. Labs personales, microservicios AISentinel (admin/auth) y backends del Sistema Bancario / Restaurante.',
           projects: [
             { name: 'COPEREX Interfer API', year: 2026 },
-            { name: 'server-admin-IN6BV', year: 2026 },
-            { name: 'Gestor de opiniones', year: 2026 },
+            { name: 'server-admin-aisentinel', year: 2026 },
+            { name: 'server-auth-aisentinel', year: 2026 },
+            { name: 'Sistema Bancario API', year: 2026 },
           ],
           subSkills: [
             { name: 'HTTP / APIs', val: 52 },
@@ -162,15 +172,33 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Rutas, middlewares y REST. Base del API COPEREX Interfer (empresas de feria) y otros servicios IN6BV.',
+            'Rutas, middlewares y REST. APIs académicas (COPEREX), servicios IN6BV y capas admin de AISentinel.',
           projects: [
             { name: 'COPEREX Interfer API', year: 2026 },
+            { name: 'Sistema Restaurante API', year: 2026 },
             { name: 'Gestor de opiniones', year: 2026 },
           ],
           subSkills: [
             { name: 'Rutas / controllers', val: 52 },
             { name: 'Middlewares', val: 48 },
             { name: 'REST JSON', val: 50 },
+          ],
+        },
+        {
+          name: 'Python',
+          percentage: 45,
+          experience: '1',
+          level: 'En progreso',
+          description:
+            'Scripts y servicios de IA/visión. En AISentinel trabajo el módulo de procesamiento de imágenes (server-pyimage) y en IN6BV el motor ANA-IA-Engine.',
+          projects: [
+            { name: 'server-pyimage-aisentinel', year: 2026 },
+            { name: 'ANA-IA-Engine', year: 2026 },
+          ],
+          subSkills: [
+            { name: 'Sintaxis / scripts', val: 48 },
+            { name: 'APIs / servicios', val: 42 },
+            { name: 'Procesamiento / IA básica', val: 45 },
           ],
         },
         {
@@ -191,18 +219,19 @@ const useStackStore = create((set) => ({
         },
         {
           name: 'C#',
-          percentage: 32,
+          percentage: 35,
           experience: '1',
           level: 'Fundamentos',
           description:
-            'Servicios de autenticación en labs (AuthService / opiniones). Aún en etapa de aprendizaje, no es mi stack diario.',
+            'Microservicios de autenticación: AuthService en labs personales y en Sistema Bancario / Restaurante (IN6BV).',
           projects: [
-            { name: 'Gestor opiniones AuthService', year: 2026 },
+            { name: 'Sistema-Bancario-AuthService', year: 2026 },
+            { name: 'Sistema-Restaurante-AuthService', year: 2026 },
             { name: 'AuthService IN6BV', year: 2026 },
           ],
           subSkills: [
-            { name: 'Sintaxis básica', val: 35 },
-            { name: 'Servicios / auth', val: 30 },
+            { name: 'Sintaxis básica', val: 38 },
+            { name: 'Servicios / auth', val: 35 },
           ],
         },
       ],
@@ -217,7 +246,7 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Modelo relacional, SQL y CRUD en APIs. Usado con Node/Express en COPEREX Interfer (empresas de feria).',
+            'Modelo relacional, SQL y CRUD en APIs. Usado con Node/Express en COPEREX Interfer y en servicios de comunidad.',
           projects: [
             { name: 'COPEREX Interfer API', year: 2026 },
           ],
@@ -228,12 +257,30 @@ const useStackStore = create((set) => ({
           ],
         },
         {
+          name: 'MySQL',
+          percentage: 45,
+          experience: '1',
+          level: 'En progreso',
+          description:
+            'SQL relacional en proyectos académicos y de comunidad (IN6BV / AISentinel): tablas, consultas, relaciones y CRUD desde APIs.',
+          projects: [
+            { name: 'Sistema Bancario', year: 2026 },
+            { name: 'Sistema Restaurante', year: 2026 },
+            { name: 'server-admin-aisentinel', year: 2026 },
+          ],
+          subSkills: [
+            { name: 'SQL / CRUD', val: 48 },
+            { name: 'Joins / relaciones', val: 44 },
+            { name: 'Diseño de esquema', val: 42 },
+          ],
+        },
+        {
           name: 'MongoDB',
           percentage: 40,
           experience: '1',
           level: 'Fundamentos',
           description:
-            'Documentos, colecciones y CRUD NoSQL en prácticas. Menos horas que PostgreSQL, pero lo conozco a nivel proyecto.',
+            'Documentos, colecciones y CRUD NoSQL en prácticas. Menos horas que SQL relacional, pero lo uso a nivel proyecto.',
           projects: [
             { name: 'Gestor de opiniones', year: 2026 },
           ],
@@ -254,14 +301,15 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Ramas, commits, PRs y GitHub en el flujo del portafolio y labs. Trabajo con feature branches y pull requests.',
+            'Ramas, commits, PRs y colaboración en orgs (Grupo1-AISentinel, Sistema-Bancario-IN6BV) y en el portafolio personal.',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
-            { name: 'COPEREX Interfer API', year: 2026 },
+            { name: 'AISentinel (org)', year: 2026 },
+            { name: 'Sistema Bancario IN6BV (org)', year: 2026 },
           ],
           subSkills: [
             { name: 'Commits / ramas', val: 58 },
-            { name: 'PRs / GitHub', val: 52 },
+            { name: 'PRs / GitHub orgs', val: 55 },
             { name: 'Conflictos básicos', val: 45 },
           ],
         },
@@ -271,8 +319,10 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'Fundamentos',
           description:
-            'Imágenes, contenedores y Dockerfiles a nivel introductorio para levantar servicios en labs. Sigo practicando.',
-          projects: [],
+            'Imágenes, contenedores y Dockerfiles a nivel introductorio para levantar servicios en labs y microservicios de comunidad. Sigo practicando.',
+          projects: [
+            { name: 'orquestador-aisentinel', year: 2026 },
+          ],
           subSkills: [
             { name: 'Dockerfile básico', val: 38 },
             { name: 'Contenedores / run', val: 35 },
@@ -284,9 +334,10 @@ const useStackStore = create((set) => ({
           experience: '1',
           level: 'En progreso',
           description:
-            'Escenas 3D en el hero del portafolio con React Three Fiber / Drei (modelo MacBook, luces, partículas).',
+            'Escenas 3D con React Three Fiber / Drei en el portafolio y también en el client de AISentinel (Three + R3F).',
           projects: [
             { name: 'Portafolio Marlon', year: 2026 },
+            { name: 'AISentinel Client', year: 2026 },
           ],
           subSkills: [
             { name: 'R3F / Canvas', val: 45 },

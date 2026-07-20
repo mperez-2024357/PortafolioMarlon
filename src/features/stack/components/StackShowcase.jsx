@@ -9,9 +9,11 @@ import {
   siHtml5,
   siJavascript,
   siMongodb,
+  siMysql,
   siNodedotjs,
   siOpenjdk,
   siPostgresql,
+  siPython,
   siReact,
   siTailwindcss,
   siThreedotjs,
@@ -29,9 +31,11 @@ const iconMap = {
   TypeScript: { icon: siTypescript, keyColor: "#2563EB", glow: "#60A5FA" },
   "Node.js": { icon: siNodedotjs, keyColor: "#15803D", glow: "#22C55E" },
   Express: { icon: siExpress, keyColor: "#4C1D95", glow: "#A78BFA" },
+  Python: { icon: siPython, keyColor: "#2563EB", glow: "#FACC15" },
   Java: { icon: siOpenjdk, keyColor: "#C2410C", glow: "#F97316" },
   "C#": { icon: siDotnet, keyColor: "#7C3AED", glow: "#C084FC" },
   PostgreSQL: { icon: siPostgresql, keyColor: "#1D4ED8", glow: "#60A5FA" },
+  MySQL: { icon: siMysql, keyColor: "#C2410C", glow: "#F97316" },
   MongoDB: { icon: siMongodb, keyColor: "#15803D", glow: "#22C55E" },
   Git: { icon: siGit, keyColor: "#F97316", glow: "#F97316" },
   Docker: { icon: siDocker, keyColor: "#0284C7", glow: "#00D2FF" },
@@ -451,7 +455,7 @@ export default function StackShowcase({ categories }) {
           viewport={{ once: true }}
           className="section-kicker mb-3 text-brand-cyan"
         >
-          Stack en crecimiento · ~1 año
+          Stack en crecimiento · ~1 año · comunidades
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 18 }}
@@ -468,8 +472,10 @@ export default function StackShowcase({ categories }) {
           transition={{ delay: 0.08 }}
           className="mt-2 text-xs text-slate-300 sm:mt-3 sm:text-sm md:text-base"
         >
-          Datos realistas según práctica y repos en GitHub. React lidera (~60%); el resto refleja
-          aprendizaje activo, no seniority.
+          Práctica personal y trabajo colaborativo en{" "}
+          <span className="font-semibold text-white/90">Grupo1-AISentinel</span> y{" "}
+          <span className="font-semibold text-white/90">Sistema-Bancario-IN6BV</span>. React lidera
+          (~60%); el resto es aprendizaje real, no seniority.
         </motion.p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
           <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold text-slate-300">
@@ -481,6 +487,22 @@ export default function StackShowcase({ categories }) {
           <span className="rounded-full border border-brand-accent/25 bg-brand-accent/10 px-3 py-1 text-[11px] font-bold text-brand-accent">
             React {categories.flatMap((c) => c.skills).find((s) => s.name === "React")?.percentage ?? 60}%
           </span>
+          <a
+            href="https://github.com/orgs/Grupo1-AISentinel"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold text-slate-300 transition-colors hover:border-brand-cyan/40 hover:text-brand-cyan"
+          >
+            AISentinel
+          </a>
+          <a
+            href="https://github.com/orgs/Sistema-Bancario-IN6BV"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold text-slate-300 transition-colors hover:border-brand-cyan/40 hover:text-brand-cyan"
+          >
+            IN6BV
+          </a>
         </div>
       </div>
 
