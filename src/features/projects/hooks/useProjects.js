@@ -19,10 +19,17 @@ export default function useProjects() {
 
   const categories = ['All', ...new Set(projects.map((project) => project.category))]
   const filteredProjects = activeCategory === 'All' ? projects : projects.filter((project) => project.category === activeCategory)
+  const visualProjects = projects.filter(
+    (project) =>
+      project.hasVisualInterface &&
+      Array.isArray(project.screenshots) &&
+      project.screenshots.length > 0,
+  )
 
   return {
     projects,
     filteredProjects,
+    visualProjects,
     selectedProject,
     activeCategory,
     isLoading,

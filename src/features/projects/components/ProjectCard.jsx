@@ -41,6 +41,12 @@ export default function ProjectCard({ project, onSelect }) {
           <span className="text-sm font-bold text-brand-secondary">{project.year}</span>
         </div>
 
+        {project.community && (
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.12em] text-sky-700">
+            Comunidad · {project.community}
+          </p>
+        )}
+
         <h3 className="text-xl font-black text-brand-ink">{project.title}</h3>
         <p className="mt-3 flex-1 text-sm leading-7 text-brand-secondary">{project.summary}</p>
 
