@@ -46,7 +46,10 @@ export default function ProjectDetailModal({ project, onClose }) {
       <section className="relative max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-lg bg-white shadow-[0_34px_120px_rgba(2,8,23,.42)]">
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-200 bg-white/92 px-5 py-4 backdrop-blur-xl">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">{project.category}</p>
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-primary">
+              {project.category}
+              {project.community ? ` · ${project.community}` : ''}
+            </p>
             <h3 className="text-xl font-black text-brand-ink">{project.title}</h3>
           </div>
           <button
@@ -62,6 +65,24 @@ export default function ProjectDetailModal({ project, onClose }) {
         <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="bg-slate-100 p-4 sm:p-6">
             <img src={project.image} alt={`Imagen del proyecto ${project.title}`} className="aspect-[16/10] w-full rounded-lg object-cover shadow-lg" />
+            {project.hasVisualInterface && Array.isArray(project.screenshots) && project.screenshots.length > 1 && (
+              <div className="mt-3">
+                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-secondary">
+                  Vistas de interfaz
+                </p>
+                <div className="flex gap-2 overflow-x-auto pb-1">
+                  {project.screenshots.map((shot) => (
+                    <div
+                      key={shot.id}
+                      className="h-16 w-28 shrink-0 overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm"
+                      title={shot.label}
+                    >
+                      <img src={shot.image} alt={shot.label} className="h-full w-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="p-6">
