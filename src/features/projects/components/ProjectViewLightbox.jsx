@@ -123,11 +123,23 @@ export default function ProjectViewLightbox({
                     {project.title.toLowerCase().replace(/\s+/g, '-')}.app / {shot.label}
                   </span>
                 </div>
-                <img
-                  src={shot.image}
-                  alt={`${project.title} — ${shot.label}`}
-                  className="aspect-[16/10] w-full object-cover"
-                />
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  {shot.fit === 'contain' && (
+                    <img
+                      src={shot.image}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-2xl"
+                    />
+                  )}
+                  <img
+                    src={shot.image}
+                    alt={`${project.title} — ${shot.label}`}
+                    className={`relative h-full w-full ${
+                      shot.fit === 'contain' ? 'object-contain py-3' : 'object-cover'
+                    }`}
+                  />
+                </div>
               </div>
               <p className="mt-4 text-center text-sm text-white/55">{shot.caption}</p>
             </motion.div>
@@ -160,7 +172,13 @@ export default function ProjectViewLightbox({
                       aria-label={item.label}
                       aria-current={active ? 'true' : undefined}
                     >
-                      <img src={item.image} alt="" className="h-full w-full object-cover" />
+                      <img
+                        src={item.image}
+                        alt=""
+                        className={`h-full w-full ${
+                          item.fit === 'contain' ? 'bg-space-graphite object-contain' : 'object-cover'
+                        }`}
+                      />
                     </button>
                   )
                 })}

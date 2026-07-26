@@ -30,6 +30,15 @@ public/assets/projects/restaurante-frontend/dashboard.png
 
 Si falta un archivo, se usa el mock SVG automático.
 
+## Capturas integradas
+
+| Archivo | Proyecto | Vista |
+|---|---|---|
+| `restaurante-frontend/panel-usuarios.jpeg` | Sistema Restaurante Frontend | Administración de usuarios |
+| `restaurante-movil/inicio.jpeg` | Sistema Restaurante Móvil | Inicio de la app |
+
+Estas rutas personalizadas están declaradas en `useProjectsStore.js`.
+
 ### Tips
 - Mejor proporción **16:10** o **16:9** (p. ej. 1600×1000).
 - Capturas del navegador o del emulador móvil.
