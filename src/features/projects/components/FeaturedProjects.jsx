@@ -37,10 +37,20 @@ function FeaturedRow({ project, index, onSelect }) {
         aria-label={`Ver detalles de ${project.title}`}
         className={`relative block aspect-[16/11] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-[0_24px_60px_rgba(15,23,42,.12)] ${flip ? 'md:order-2' : ''}`}
       >
+        {project.imageFit === 'contain' && (
+          <img
+            src={project.image}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-2xl"
+          />
+        )}
         <img
           src={project.image}
           alt={`Vista previa de ${project.title}`}
-          className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.06]"
+          className={`relative h-full w-full transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.06] ${
+            project.imageFit === 'contain' ? 'object-contain py-4' : 'object-cover'
+          }`}
         />
         <span className="absolute left-4 top-4 rounded-lg border border-white/25 bg-brand-dark/72 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md" style={grotesk}>
           {project.category}

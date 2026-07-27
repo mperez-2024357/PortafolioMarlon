@@ -19,10 +19,20 @@ export default function ProjectCard({ project, onSelect }) {
     <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,.08)] transition-all duration-300 hover:border-brand-primary/30 hover:shadow-[0_24px_60px_rgba(37,99,235,.14)]">
       <button type="button" onClick={() => onSelect(project)} className="cursor-pointer text-left">
         <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+          {project.imageFit === 'contain' && (
+            <img
+              src={project.image}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-2xl"
+            />
+          )}
           <img
             src={project.image}
             alt={`Vista previa de ${project.title}`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
+            className={`relative h-full w-full transition-transform duration-500 group-hover:scale-[1.035] ${
+              project.imageFit === 'contain' ? 'object-contain py-3' : 'object-cover'
+            }`}
           />
           <div className="absolute left-4 top-4 rounded-lg border border-white/25 bg-brand-dark/72 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md">
             {project.category}
