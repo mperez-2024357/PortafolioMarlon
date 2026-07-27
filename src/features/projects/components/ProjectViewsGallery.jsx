@@ -155,22 +155,38 @@ export default function ProjectViewsGallery({ projects = [], onOpenProject }) {
           <button
             type="button"
             onClick={() => setLightboxOpen(true)}
-            className="group relative block w-full cursor-zoom-in text-left"
+            className="group relative block w-full cursor-zoom-in overflow-hidden bg-slate-100 text-left"
             aria-label={`Ampliar vista de ${active.title}`}
           >
+            {activeShot?.fit === 'contain' && (
+              <img
+                src={activeShot.image}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-2xl"
+              />
+            )}
             <AnimatePresence mode="wait">
               <motion.img
                 key={`${active.id}-${activeShot?.id}`}
                 src={activeShot?.image}
                 alt={`Captura: ${active.title} — ${activeShot?.label}`}
-                className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                className={`relative aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-[1.02] ${
+                  activeShot?.fit === 'contain' ? 'object-contain py-4' : 'object-cover'
+                }`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.28, ease }}
               />
             </AnimatePresence>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/70 via-brand-dark/20 to-transparent px-5 pb-5 pt-16">
+            <div
+              className={`pointer-events-none inset-x-0 bottom-0 px-5 ${
+                activeShot?.fit === 'contain'
+                  ? 'relative border-t border-white/10 bg-brand-dark py-4'
+                  : 'absolute bg-gradient-to-t from-brand-dark/70 via-brand-dark/20 to-transparent pb-5 pt-16'
+              }`}
+            >
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-cyan">
                 {activeShot?.label}
               </p>
@@ -195,7 +211,13 @@ export default function ProjectViewsGallery({ projects = [], onOpenProject }) {
                   aria-label={shot.label}
                   aria-current={selected ? 'true' : undefined}
                 >
-                  <img src={shot.image} alt="" className="h-full w-full object-cover" />
+                  <img
+                    src={shot.image}
+                    alt=""
+                    className={`h-full w-full ${
+                      shot.fit === 'contain' ? 'bg-slate-100 object-contain' : 'object-cover'
+                    }`}
+                  />
                   <span className="absolute inset-x-0 bottom-0 bg-brand-dark/65 px-1 py-0.5 text-center text-[9px] font-bold uppercase tracking-wide text-white">
                     {shot.label}
                   </span>

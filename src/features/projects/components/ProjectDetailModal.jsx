@@ -64,7 +64,23 @@ export default function ProjectDetailModal({ project, onClose }) {
 
         <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="bg-slate-100 p-4 sm:p-6">
-            <img src={project.image} alt={`Imagen del proyecto ${project.title}`} className="aspect-[16/10] w-full rounded-lg object-cover shadow-lg" />
+            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-slate-200 shadow-lg">
+              {project.imageFit === 'contain' && (
+                <img
+                  src={project.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-2xl"
+                />
+              )}
+              <img
+                src={project.image}
+                alt={`Imagen del proyecto ${project.title}`}
+                className={`relative h-full w-full ${
+                  project.imageFit === 'contain' ? 'object-contain py-3' : 'object-cover'
+                }`}
+              />
+            </div>
             {project.hasVisualInterface && Array.isArray(project.screenshots) && project.screenshots.length > 1 && (
               <div className="mt-3">
                 <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-brand-secondary">
@@ -77,7 +93,13 @@ export default function ProjectDetailModal({ project, onClose }) {
                       className="h-16 w-28 shrink-0 overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm"
                       title={shot.label}
                     >
-                      <img src={shot.image} alt={shot.label} className="h-full w-full object-cover" />
+                      <img
+                        src={shot.image}
+                        alt={shot.label}
+                        className={`h-full w-full ${
+                          shot.fit === 'contain' ? 'bg-slate-100 object-contain' : 'object-cover'
+                        }`}
+                      />
                     </div>
                   ))}
                 </div>

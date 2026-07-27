@@ -149,6 +149,14 @@ const SHOT_META = [
 
 const projectAsset = (folder, file) => `/assets/projects/${folder}/${file}`
 
+const RESTAURANTE_FRONTEND_IMAGE = projectAsset(
+  'restaurante-frontend',
+  'panel-usuarios.jpeg',
+)
+const RESTAURANTE_MOVIL_IMAGE = projectAsset('restaurante-movil', 'inicio.jpeg')
+const BANCARIO_FRONTEND_IMAGE = projectAsset('bancario-frontend', 'dashboard.png')
+const BANCARIO_MOVIL_IMAGE = projectAsset('bancario-movil', 'inicio.jpeg')
+
 const buildScreenshots = ({
   title,
   baseSubtitle,
@@ -327,26 +335,19 @@ const curatedProjects = [
       'Frontend del sistema de restaurante IN6BV con demo pública en Vercel: menús, pedidos y gestión visual.',
     description:
       'Interfaz web del Sistema Restaurante en la org Sistema-Bancario-IN6BV. Incluye despliegue en Vercel para demostrar la UI de pedidos y administración del local.',
-    image: createProjectImage({
-      title: 'Restaurante UI',
-      subtitle: 'IN6BV · Vercel demo',
-      from: '#1A0F0A',
-      to: '#7C2D12',
-      accent: '#F97316',
-      variant: 'hero',
-    }),
+    image: RESTAURANTE_FRONTEND_IMAGE,
+    imageFit: 'contain',
     hasVisualInterface: true,
-    // Cuando tengas capturas en public/assets/projects/restaurante-frontend/,
-    // pon useRealAssets: true (y opcionalmente image: screenshots[0].image).
-    screenshots: buildScreenshots({
-      title: 'Restaurante UI',
-      baseSubtitle: 'IN6BV · Frontend',
-      from: '#1A0F0A',
-      to: '#7C2D12',
-      accent: '#F97316',
-      assetFolder: 'restaurante-frontend',
-      useRealAssets: false,
-    }),
+    screenshots: [
+      {
+        id: 'panel-usuarios',
+        label: 'Panel de usuarios',
+        caption:
+          'Administración web de usuarios, roles y accesos desde el dashboard de KinalEats.',
+        image: RESTAURANTE_FRONTEND_IMAGE,
+        fit: 'contain',
+      },
+    ],
     tags: ['Frontend', 'Vercel', 'JavaScript', 'REST'],
     features: [
       'Demo desplegada en Vercel',
@@ -374,24 +375,19 @@ const curatedProjects = [
       'Interfaz web del sistema bancario IN6BV: paneles y flujos de usuario sobre la API del proyecto de comunidad.',
     description:
       'Frontend del Sistema Bancario desarrollado en la org Sistema-Bancario-IN6BV. Expone la experiencia de usuario (consultas, operaciones y administración) conectada a la API y al AuthService del ecosistema.',
-    image: createProjectImage({
-      title: 'Sistema Bancario',
-      subtitle: 'IN6BV · Frontend',
-      from: '#07111F',
-      to: '#1E3A5F',
-      accent: '#2563EB',
-      variant: 'dashboard',
-    }),
+    image: BANCARIO_FRONTEND_IMAGE,
+    imageFit: 'contain',
     hasVisualInterface: true,
-    screenshots: buildScreenshots({
-      title: 'Sistema Bancario',
-      baseSubtitle: 'IN6BV · Web UI',
-      from: '#07111F',
-      to: '#1E3A5F',
-      accent: '#2563EB',
-      assetFolder: 'bancario-frontend',
-      useRealAssets: false,
-    }),
+    screenshots: [
+      {
+        id: 'dashboard-bancario',
+        label: 'Dashboard bancario',
+        caption:
+          'Panel administrativo con métricas de usuarios, cuentas, transacciones y solicitudes.',
+        image: BANCARIO_FRONTEND_IMAGE,
+        fit: 'contain',
+      },
+    ],
     tags: ['React', 'JavaScript', 'Vite', 'REST API'],
     features: [
       'UI bancaria de comunidad IN6BV',
@@ -418,24 +414,19 @@ const curatedProjects = [
       'App React Native del sistema de restaurante IN6BV: interfaz móvil para pedidos y seguimiento.',
     description:
       'Cliente móvil del Sistema Restaurante en la org Sistema-Bancario-IN6BV. Complementa el frontend web con una experiencia nativa para comensales o personal.',
-    image: createProjectImage({
-      title: 'Restaurante App',
-      subtitle: 'IN6BV · React Native',
-      from: '#1C1917',
-      to: '#9A3412',
-      accent: '#F97316',
-      variant: 'mobile',
-    }),
+    image: RESTAURANTE_MOVIL_IMAGE,
+    imageFit: 'contain',
     hasVisualInterface: true,
-    screenshots: buildScreenshots({
-      title: 'Restaurante App',
-      baseSubtitle: 'IN6BV · React Native',
-      from: '#1C1917',
-      to: '#9A3412',
-      accent: '#F97316',
-      assetFolder: 'restaurante-movil',
-      useRealAssets: false,
-    }),
+    screenshots: [
+      {
+        id: 'inicio-movil',
+        label: 'Inicio móvil',
+        caption:
+          'Pantalla principal con categorías, restaurantes recientes y navegación de pedidos.',
+        image: RESTAURANTE_MOVIL_IMAGE,
+        fit: 'contain',
+      },
+    ],
     tags: ['React Native', 'JavaScript', 'Mobile', 'Android'],
     features: [
       'UI móvil de restaurante',
@@ -462,24 +453,19 @@ const curatedProjects = [
       'App React Native del sistema bancario IN6BV: interfaz móvil para operaciones del cliente.',
     description:
       'Cliente móvil del Sistema Bancario (org Sistema-Bancario-IN6BV). React Native para Android con flujos de consulta y operaciones conectados a los servicios de la comunidad.',
-    image: createProjectImage({
-      title: 'Banco Móvil',
-      subtitle: 'IN6BV · React Native',
-      from: '#0F172A',
-      to: '#1D4ED8',
-      accent: '#00D2FF',
-      variant: 'mobile',
-    }),
+    image: BANCARIO_MOVIL_IMAGE,
+    imageFit: 'contain',
     hasVisualInterface: true,
-    screenshots: buildScreenshots({
-      title: 'Banco Móvil',
-      baseSubtitle: 'IN6BV · React Native',
-      from: '#0F172A',
-      to: '#1D4ED8',
-      accent: '#00D2FF',
-      assetFolder: 'bancario-movil',
-      useRealAssets: false,
-    }),
+    screenshots: [
+      {
+        id: 'inicio-bancario-movil',
+        label: 'Inicio móvil',
+        caption:
+          'Pantalla principal con saldo, accesos rápidos, cuentas y movimientos recientes.',
+        image: BANCARIO_MOVIL_IMAGE,
+        fit: 'contain',
+      },
+    ],
     tags: ['React Native', 'JavaScript', 'Mobile', 'Android'],
     features: [
       'UI nativa con React Native',
