@@ -36,6 +36,8 @@ Si falta un archivo, se usa el mock SVG automático.
 |---|---|---|
 | `restaurante-frontend/panel-usuarios.jpeg` | Sistema Restaurante Frontend | Administración de usuarios |
 | `restaurante-movil/inicio.jpeg` | Sistema Restaurante Móvil | Inicio de la app |
+| `bancario-frontend/dashboard.png` | Sistema Bancario Frontend | Panel administrativo |
+| `bancario-movil/inicio.jpeg` | Sistema Bancario Móvil | Inicio de la app |
 
 Estas rutas personalizadas están declaradas en `useProjectsStore.js`.
 

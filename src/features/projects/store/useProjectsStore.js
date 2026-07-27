@@ -154,6 +154,8 @@ const RESTAURANTE_FRONTEND_IMAGE = projectAsset(
   'panel-usuarios.jpeg',
 )
 const RESTAURANTE_MOVIL_IMAGE = projectAsset('restaurante-movil', 'inicio.jpeg')
+const BANCARIO_FRONTEND_IMAGE = projectAsset('bancario-frontend', 'dashboard.png')
+const BANCARIO_MOVIL_IMAGE = projectAsset('bancario-movil', 'inicio.jpeg')
 
 const buildScreenshots = ({
   title,
@@ -373,24 +375,19 @@ const curatedProjects = [
       'Interfaz web del sistema bancario IN6BV: paneles y flujos de usuario sobre la API del proyecto de comunidad.',
     description:
       'Frontend del Sistema Bancario desarrollado en la org Sistema-Bancario-IN6BV. Expone la experiencia de usuario (consultas, operaciones y administración) conectada a la API y al AuthService del ecosistema.',
-    image: createProjectImage({
-      title: 'Sistema Bancario',
-      subtitle: 'IN6BV · Frontend',
-      from: '#07111F',
-      to: '#1E3A5F',
-      accent: '#2563EB',
-      variant: 'dashboard',
-    }),
+    image: BANCARIO_FRONTEND_IMAGE,
+    imageFit: 'contain',
     hasVisualInterface: true,
-    screenshots: buildScreenshots({
-      title: 'Sistema Bancario',
-      baseSubtitle: 'IN6BV · Web UI',
-      from: '#07111F',
-      to: '#1E3A5F',
-      accent: '#2563EB',
-      assetFolder: 'bancario-frontend',
-      useRealAssets: false,
-    }),
+    screenshots: [
+      {
+        id: 'dashboard-bancario',
+        label: 'Dashboard bancario',
+        caption:
+          'Panel administrativo con métricas de usuarios, cuentas, transacciones y solicitudes.',
+        image: BANCARIO_FRONTEND_IMAGE,
+        fit: 'contain',
+      },
+    ],
     tags: ['React', 'JavaScript', 'Vite', 'REST API'],
     features: [
       'UI bancaria de comunidad IN6BV',
@@ -456,24 +453,19 @@ const curatedProjects = [
       'App React Native del sistema bancario IN6BV: interfaz móvil para operaciones del cliente.',
     description:
       'Cliente móvil del Sistema Bancario (org Sistema-Bancario-IN6BV). React Native para Android con flujos de consulta y operaciones conectados a los servicios de la comunidad.',
-    image: createProjectImage({
-      title: 'Banco Móvil',
-      subtitle: 'IN6BV · React Native',
-      from: '#0F172A',
-      to: '#1D4ED8',
-      accent: '#00D2FF',
-      variant: 'mobile',
-    }),
+    image: BANCARIO_MOVIL_IMAGE,
+    imageFit: 'contain',
     hasVisualInterface: true,
-    screenshots: buildScreenshots({
-      title: 'Banco Móvil',
-      baseSubtitle: 'IN6BV · React Native',
-      from: '#0F172A',
-      to: '#1D4ED8',
-      accent: '#00D2FF',
-      assetFolder: 'bancario-movil',
-      useRealAssets: false,
-    }),
+    screenshots: [
+      {
+        id: 'inicio-bancario-movil',
+        label: 'Inicio móvil',
+        caption:
+          'Pantalla principal con saldo, accesos rápidos, cuentas y movimientos recientes.',
+        image: BANCARIO_MOVIL_IMAGE,
+        fit: 'contain',
+      },
+    ],
     tags: ['React Native', 'JavaScript', 'Mobile', 'Android'],
     features: [
       'UI nativa con React Native',
